@@ -1,15 +1,19 @@
 import React from 'react'
-import Navbar from './Components/Navbar/Navbar'
-import LoginForm from './Components/Form/LoginForm'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import SignUpForm from './Components/Form/SignUpForm'
+import LoginForm from './pages/LoginForm'
+import SignUpForm from './pages/SignUpForm'
+import Landing from './pages/Landing'
+
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route>
-          <Route path='/' element={<LoginForm/>}/>
+          <Route path='/' element={<Landing/>}/>
+          <Route path='/signin' element={<LoginForm/>}/>
+          <Route path='/signin' element={<LoginForm/>}/>
           <Route path='/signup' element={<SignUpForm/>}/>
+          
         </Route>
       </Routes>
     </Router>
