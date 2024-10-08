@@ -1,16 +1,20 @@
 import { Sparkles } from 'lucide-react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from '../Components/Button'
 import InputForm from '../Components/InputForm'
 
 
 const LoginForm = () => {
-  const [input, setInput] = useState('')
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  function handlerChanger(values) {
-    setInput(values)
+  function usernameChanger(e) {
+    setUsername(e.target.value);
   }
 
+  function passwordChanger(e) {
+    setPassword(e.target.value)
+  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
@@ -36,8 +40,8 @@ const LoginForm = () => {
               <div className="garis w-full border-y border-gray-300"></div>
            </div>
            <div className="Formku ">
-              <InputForm value={input} onChange={handlerChanger} type="text" label="Username" placeholder="Username"/>
-              <InputForm type="password" label="Password" placeholder="Password"/>
+              <InputForm value={username} onChange={usernameChanger} type="text" label="Username" placeholder="Username"/>
+              <InputForm value={password} onChange={passwordChanger} type="password" label="Password" placeholder="Password"/>
               <Button link="/dashboard" className="mt-4 w-full py-2 bg-purple-500 text-white">
                 Continue
               </Button>

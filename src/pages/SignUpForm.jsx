@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Rocket } from 'lucide-react';
 import InputForm from '../Components/InputForm';
 import Button from '../Components/Button';
 
 const SignUpForm = () => {
+  
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPass, setConfirmPass] = useState('');
+
+  function usernameChanger (e) {
+    setUsername(e.target.value)
+  }
+
+  function passwordChanger (e) {
+    setPassword(e.target.value);
+  }
+
+  function confirmChanger (e) {
+    setConfirmPass(e.target.value);
+  }
+
   return (
     <div className="flex items-center justify-center min-h-screen">
         <div className="box flex flex-col border border-gray-200 w-[26rem] p-4 shadow-2xl">
@@ -13,11 +30,11 @@ const SignUpForm = () => {
           </div>
           <p className='text-xs mt-1 text-gray-700'>Create Now, Happy and play Forever!</p>
           <div className="flex flex-col mt-5">
-            <InputForm type="text" label="Username" placeholder="Username"/>      
-            <InputForm type="password" label="Password" placeholder="Password"/>  
-            <InputForm type="password" label="Confirm Password" placeholder="Password"/>  
+            <InputForm value={username} onChange={usernameChanger} type="text" label="Username" placeholder="Username"/>      
+            <InputForm value={password} onChange={passwordChanger} type="password" label="Password" placeholder="Password"/>  
+            <InputForm value={confirmPass} onChange={confirmChanger} type="password" label="Confirm Password" placeholder="Password"/>  
           </div>
-          <Button className="mt-4 w-full py-2 bg-purple-500 text-white">
+          <Button link="/signin" className="mt-4 w-full py-2 bg-purple-500 text-white">
             Confirm
           </Button>
           <div className="garisMoment mb-6 gap-2 flex items-center justify-center">
