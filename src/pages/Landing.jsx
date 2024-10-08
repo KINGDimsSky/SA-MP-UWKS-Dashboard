@@ -10,10 +10,10 @@ const Landing = () => {
             <h2 className='font-bold text-xl md:text-4xl tracking-tight mb-4'>GET YOUR EXPERIENCE WITH US!</h2>
             <p className='text-xs md:text-sm text-gray-600 mb-8'>Bergabunglah dengan dunia multiplayer tanpa batas <br /> Nikmati pengalaman bermain GTA San Andreas <br /> bersama teman-teman dengan fitur kustom UWKS yang seru dan kompetitif.</p>
             <div className="flex gap-2">
-                <Button link="/signin" className="w- px-6">
+                <Button link="/signin" className="w-28 bg-purple-500 text-white py-2 px-6">
                 Login
                 </Button>
-                <Button link="/signup" className="w-fit px-6">
+                <Button link="/signup" className="w-28 bg-black text-white px-6">
                  Register
                 </Button>
             </div>
