@@ -1,9 +1,11 @@
 import React from 'react'
 
-const AuthLayout = () => {
+const AuthLayout = ({children}) => {
   return (
-    <div className="texs">
-        
+    <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="border border-gray-200 shadow-2xl p-4 flex flex-col w-[26rem]">
+        {children}
+        </div>
     </div>
   )
 }
