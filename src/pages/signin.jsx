@@ -42,7 +42,7 @@ const LoginForm = () => {
            <div className="Formku ">
               <InputForm value={username} onChange={usernameChanger} type="text" label="Username" placeholder="Username"/>
               <InputForm value={password} onChange={passwordChanger} type="password" label="Password" placeholder="Password"/>
-              <Button link="/dashboard" className="mt-4 w-full py-2 bg-purple-500 text-white">
+              <Button  link="/dashboard" className="mt-4 w-full py-2 bg-purple-500 text-white">
                 Continue
               </Button>
               <h2 className='mt-6 text-xs tracking-tighter'>Dont Have Account?<a className='ml-1 font-semibold text-purple-500' href="/signup">Sign Up</a></h2>
