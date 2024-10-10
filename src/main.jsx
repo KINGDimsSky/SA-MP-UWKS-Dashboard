@@ -6,6 +6,7 @@ import Landing from './pages/Landing'
 import LoginForm from './pages/signin'
 import SignUpForm from './pages/signup'
 import NotFound from './pages/404'
+import Dashboard from './pages/dashboard'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUpForm/>
+  },
+  {
+    path : "/dashboard",
+    element: <Dashboard/>
   }
 ])
 
