@@ -22,8 +22,10 @@ const Dashboard = () => {
                 })}
               </ul>
             </div>
-            <div className="text-2xl">
-              <p>Footer</p>
+            <div className="p-2 w-full flex flex-col items-center">
+              <div className="garis w-full border-t border-gray-200 mb-2 bg-gray-200"></div>
+              <p className='text-xs'>Created By DimsSky</p>
+              <p className='text-xs'>Copyright © 2024</p>
             </div>
         </div>
         <div className="DashboardContent bg-gray-200 p-6 w-full">
