@@ -1,14 +1,20 @@
 import React from 'react'
 import { cn } from '../lib/utils'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-const Button = ({children, className, Logo, link}) => {
+const Button = ({children, className, Logo, link, type}) => {
+
+  const navigate = useNavigate();
+
+  function clickHandler () {
+    navigate(link)
+  }
 
   return (
-    <Link to={link} className={cn(`flex items-center justify-center border border-gray-300 rounded-md gap-1 py-1 mb-4`, className)}>
+    <button onClick={clickHandler} type={type} className={cn(`flex items-center justify-center border border-gray-300 rounded-md gap-1 py-1 mb-4`, className)}>
       {Logo}
-      <p className='text-sm tracking-tight font-medium'>{children}</p>
-    </Link>
+      <a className='text-sm tracking-tight font-medium'>{children}</a>
+    </button>
   )
 }
 
