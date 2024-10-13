@@ -19,7 +19,7 @@ const Landing = () => {
             </div>
         </div>
         <div className="w-[40rem] h-[30rem] flex items-center md:mb-32 justify-center md:mr-40">
-            <img className='w-[22rem] select-none' draggable='false' src="/public/PED.png" alt="img" />
+            <img className='w-[22rem] select-none' draggable='false' src="/PED.png" alt="img" />
         </div>
     </div>
   )

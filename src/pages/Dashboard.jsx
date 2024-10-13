@@ -1,5 +1,6 @@
 import { Flag, House, Settings, User } from 'lucide-react'
-import React from 'react'
+import { sidebarItem } from '../config'
+
 const Dashboard = () => {
 
   const iconMap = {
@@ -8,25 +9,6 @@ const Dashboard = () => {
     Settings: Settings,
     Flag: Flag
   }
-
-  const sidebarItem = [{
-    title : "Home",
-    icon : "House"
-  },
-  {
-    title: "Player Info",
-    icon : "User"
-  },
-  {
-    title : "Settings",
-    icon : "Settings"
-  },
-  {
-    title : "Reports Bug",
-    icon : "Flag"
-  }
-
-];
 
   return (
     <div className="flex">
