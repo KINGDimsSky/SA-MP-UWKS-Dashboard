@@ -25,7 +25,7 @@ const router = createBrowserRouter([
   {
     path : "/dashboard",
     element: <Dashboard/>
-  }
+  },
 ])
 
 createRoot(document.getElementById('root')).render(

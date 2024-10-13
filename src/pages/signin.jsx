@@ -30,7 +30,7 @@ const LoginForm = () => {
            <div className="Formku ">
               <InputForm htmlFor="email" type="email" label="Email" placeholder="Username"/>
               <InputForm htmlFor="password" type="password" label="Password" placeholder="Password"/>
-              <Button link="/" className="mt-4 w-full py-2 bg-purple-500 text-white">
+              <Button type="submit" link="/dashboard" className="mt-4 w-full py-2 bg-purple-500 text-white">
                 Continue
               </Button>
               <h2 className='mt-6 text-xs tracking-tighter'>Dont Have Account?<Link to="/signup" className='ml-1 font-semibold text-purple-500'>Sign Up</Link></h2>
