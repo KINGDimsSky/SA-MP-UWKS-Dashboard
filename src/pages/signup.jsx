@@ -1,10 +1,29 @@
 import { Rocket } from 'lucide-react';
 import InputForm from '../Components/InputForm';
 import Button from '../Components/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AuthLayout from '../Layout/AuthLayout';
+import { useState } from 'react';
 
 const SignUpForm = () => {
+  const navigate = useNavigate();
+  const [wrongPass, setWrongPass] = useState(false);
+
+  const signHandler =  (event) => {
+    const password = event.target.password.value;
+    const confirmPassword = event.target.confirmpassword.value;
+    event.preventDefault();
+    localStorage.setItem('username', event.target.username.value);
+    localStorage.setItem('password', password);
+    if (confirmPassword === password){
+      navigate('/login');
+    }else {
+      setWrongPass(true)
+    }
+
+  }
+
+
   return (
     <AuthLayout>
       <div className="flex gap-2 items-center mb-1">
@@ -12,14 +31,19 @@ const SignUpForm = () => {
         <h2 className='font-semibold text-xl'>Sign Up</h2>
         </div>
           <p className='text-xs mt-1 text-gray-700'>Create Now, Happy and play Forever!</p>
-          <div className="flex flex-col mt-5">
-            <InputForm htmlFor="username" type="text" label="Username" placeholder="Username"/>      
+          {wrongPass && (
+            <h2 className='text-red-400 text-sm my-2'>Password Does'nt Match please Check Again</h2>
+          )}
+            
+          <form onSubmit={signHandler}>
+          <InputForm htmlFor="username" type="text" label="Username" placeholder="Username"/>      
             <InputForm htmlFor="password" type="password" label="Password" placeholder="Password"/>  
             <InputForm htmlFor="confirmpassword" type="password" label="Confirm Password" placeholder="Password"/>  
-          </div>
-          <Button link="/signin" className="mt-4 w-full py-2 bg-purple-500 text-white">
+          <Button type="submit" className="mt-4 w-full py-2 bg-purple-500 text-white">
             Confirm
           </Button>
+          </form>
+           
           <div className="garisMoment mb-6 gap-2 flex items-center justify-center">
             <div className="garis w-full border-y border-gray-300"></div>
             <h2 className='text-gray-400 text-sm'>OR</h2>
