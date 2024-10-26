@@ -3,12 +3,13 @@ import Button from '../Components/Button'
 import InputForm from '../Components/InputForm'
 import AuthLayout from '../Layout/AuthLayout'
 import { Link, useNavigate } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
-import { loginSessions } from '../services/Auth.service'
+import { useEffect, useRef, useState } from 'react'
+import { generateToken, loginSessions } from '../services/Auth.service'
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const loginRef = useRef(null);
+  const [existed, setExisted] = useState(false)
 
   useEffect(() => {
     loginRef.current.focus()
@@ -20,12 +21,26 @@ const LoginForm = () => {
       username: event.target.username.value,
       password: event.target.password.value
     }
-    loginSessions(data, (status, res) => {
+    
+    const localdata = {
+      username: localStorage.getItem('username'),
+      password: localStorage.getItem('password')
+    }
+
+    if (data.username === localdata.username && data.password === localdata.password){
+      const token = generateToken()
+      localStorage.setItem('token', token)
+      navigate('/dashboard');
+    }else {
+      setExisted(true)
+    }
+
+    /* loginSessions(data, (status, res) => {
       if (status){
         localStorage.setItem('token', res);
         navigate('/dashboard')
       }
-    })
+    }) */
   }
 
   return (
@@ -45,11 +60,14 @@ const LoginForm = () => {
               Sign In With Apple
             </Button>
            </div>
-           <div className="mb-6 gap-2 flex items-center justify-center">
+           <div className="mb-4 gap-2 flex items-center justify-center">
               <div className="garis w-full border-y border-gray-300"></div>
               <h2 className='text-gray-400 text-sm'>OR</h2>
               <div className="garis w-full border-y border-gray-300"></div>
            </div>
+           {existed && (
+            <h2 className='text-red-400 mb-2 text-sm'>Username Or Password Wrong!</h2>
+           )}
            <form onSubmit={handleSubmit}>
               <InputForm ref={loginRef} htmlFor="username" type="text" label="Username" placeholder="John Doe"/>
               <InputForm htmlFor="password" type="password" label="Password" placeholder="Password"/>

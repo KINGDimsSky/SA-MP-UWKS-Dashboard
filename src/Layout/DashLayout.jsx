@@ -13,7 +13,7 @@ const DashLayout = () => {
     useEffect(() => {
       const tokenStatus = localStorage.getItem('token');
       if (tokenStatus){
-        setUsername(getUsername(tokenStatus))      
+        setUsername(tokenStatus)      
       }else {
         navigate('/signin')    
       }

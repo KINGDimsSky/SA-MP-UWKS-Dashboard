@@ -10,27 +10,27 @@ const SignUpForm = () => {
   const [wrongPass, setWrongPass] = useState(false);
 
   const signHandler =  (event) => {
+    const username = event.target.username.value;
     const password = event.target.password.value;
     const confirmPassword = event.target.confirmpassword.value;
     event.preventDefault();
-    localStorage.setItem('username', event.target.username.value);
-    localStorage.setItem('password', password);
+
     if (confirmPassword === password){
-      navigate('/login');
+      localStorage.setItem('username', username);
+      localStorage.setItem('password', password);
+      navigate('/signin');
     }else {
       setWrongPass(true)
-    }
+    } 
 
   }
-
-
   return (
     <AuthLayout>
       <div className="flex gap-2 items-center mb-1">
         <Rocket size={20}/>
         <h2 className='font-semibold text-xl'>Sign Up</h2>
         </div>
-          <p className='text-xs mt-1 text-gray-700'>Create Now, Happy and play Forever!</p>
+          <p className='text-xs mt-1 mb-2 text-gray-700'>Create Now, Happy and play Forever!</p>
           {wrongPass && (
             <h2 className='text-red-400 text-sm my-2'>Password Does'nt Match please Check Again</h2>
           )}
