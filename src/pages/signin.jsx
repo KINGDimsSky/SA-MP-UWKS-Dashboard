@@ -9,7 +9,8 @@ import { generateToken, loginSessions } from '../services/Auth.service'
 const LoginForm = () => {
   const navigate = useNavigate();
   const loginRef = useRef(null);
-  const [existed, setExisted] = useState(false)
+  const [existed, setExisted] = useState(false);
+  const [ifWrongPass, setifWrongPass] = useState(false);
 
   useEffect(() => {
     loginRef.current.focus()
@@ -31,6 +32,8 @@ const LoginForm = () => {
       const token = generateToken()
       localStorage.setItem('token', token)
       navigate('/dashboard');
+    }else if (data.username === localdata.username && data.password !== localdata.password){
+      setifWrongPass(true)
     }else {
       setExisted(true)
     }
@@ -42,6 +45,12 @@ const LoginForm = () => {
       }
     }) */
   }
+
+  useEffect(() => {
+    if(existed || ifWrongPass){
+      console.log("Test")
+    }
+  }, [existed, ifWrongPass])
 
   return (
     <AuthLayout>
@@ -65,8 +74,11 @@ const LoginForm = () => {
               <h2 className='text-gray-400 text-sm'>OR</h2>
               <div className="garis w-full border-y border-gray-300"></div>
            </div>
+           {ifWrongPass && (
+             <h2 className='text-red-400 mb-2 text-sm'>Wrong Password!</h2>
+           )}
            {existed && (
-            <h2 className='text-red-400 mb-2 text-sm'>Username Or Password Wrong!</h2>
+            <h2 className='text-red-400 mb-2 text-sm'>Account Does'nt Exist!</h2>
            )}
            <form onSubmit={handleSubmit}>
               <InputForm ref={loginRef} htmlFor="username" type="text" label="Username" placeholder="John Doe"/>
