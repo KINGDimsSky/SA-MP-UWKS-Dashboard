@@ -20,7 +20,7 @@ const DashLayout = () => {
     }, [activeIndex])
 
     const iconMap = {
-        House: House,
+        House: House, 
         User: User,
         Settings: Settings,
         Flag: Flag
@@ -41,7 +41,7 @@ const DashLayout = () => {
           <p>Copyright © 2024</p>
         </div>
     </div>
-    <div className="DashboardContent bg-gray-200 pt-24 pb-6 px-6 w-full">
+    <div className="DashboardContent bg-gray-200 pt-20 pb-6 px-6 w-full">
         <div className="content bg-white rounded-md h-full">
             <h2 className='text-2xl'>Dashboard Content</h2>
         </div>

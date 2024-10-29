@@ -47,8 +47,10 @@ const LoginForm = () => {
   }
 
   useEffect(() => {
-    if(existed || ifWrongPass){
-      console.log("Test")
+    if(ifWrongPass){
+      setTimeout(() => {
+        setifWrongPass(false)
+      }, 5000)
     }
   }, [existed, ifWrongPass])
 
