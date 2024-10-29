@@ -10,7 +10,11 @@ const Navbar = () => {
   }
 
   const dropdownHandler = () => {
-    setClicked(true)
+    if (clicked){
+      setClicked(false)
+    }else{
+      setClicked(true)
+    }
   }
 
   useEffect(() => {
@@ -29,6 +33,10 @@ const Navbar = () => {
         <div className="w-8 h-8 rounded-full bg-red-500"></div>
         <ChevronDown onClick={dropdownHandler}/>
       </div>
+      {clicked && (
+         <div className="absolute bg-emerald-300 right-0 w-44 top-12 transition-all duration-500">test</div>
+      )}
+     
     </div>
   )
 }
