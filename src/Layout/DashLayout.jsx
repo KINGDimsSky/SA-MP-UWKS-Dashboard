@@ -4,6 +4,8 @@ import { sidebarItem } from '../config'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { getUsername } from '../services/Auth.service';
+import HomeDash from '../Components/HomeDash';
+import PlayerInfo from '../Components/PlayerInfo';
 
 const DashLayout = () => {
     const navigate = useNavigate();
@@ -26,6 +28,7 @@ const DashLayout = () => {
         Flag: Flag
       }
 
+      
   return (
     <div className="flex">
     <div className="flex border-r border-gray-300 items-center justify-between flex-col w-72 h-screen">
@@ -43,7 +46,8 @@ const DashLayout = () => {
     </div>
     <div className="DashboardContent bg-gray-200 pt-20 pb-6 px-6 w-full">
         <div className="content bg-white rounded-md h-full">
-            <h2 className='text-2xl'>Dashboard Content</h2>
+            {activeIndex === 0 ? <HomeDash/> : null}
+            {activeIndex === 1 ? <PlayerInfo/> : null}
         </div>
     </div>
 </div>
