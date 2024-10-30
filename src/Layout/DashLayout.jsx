@@ -31,7 +31,7 @@ const DashLayout = () => {
       
   return (
     <div className="flex">
-    <div className="flex border-r border-gray-300 items-center justify-between flex-col w-72 h-screen">
+    <div className="md:flex border-r hidden border-gray-300 items-center justify-between flex-col w-72 h-screen">
           <ul className='mt-28 flex flex-col w-full gap-y-4'>
             {sidebarItem.map((e, index) => {
             const MyIcons = iconMap[e.icon]
@@ -44,8 +44,8 @@ const DashLayout = () => {
           <p>Copyright © 2024</p>
         </div>
     </div>
-    <div className="DashboardContent bg-gray-200 pt-20 pb-6 px-6 w-full">
-        <div className="content bg-white rounded-md h-full">
+    <div className="DashboardContent bg-gray-200 pt-20 pb-6 md:px-6 px-3 w-full">
+        <div className="py-8 px-2 bg-white rounded-md h-full">
             {activeIndex === 0 ? <HomeDash/> : null}
             {activeIndex === 1 ? <PlayerInfo/> : null}
         </div>

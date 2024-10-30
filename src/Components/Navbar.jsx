@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Bell, ChevronDown, LogOut } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate()
   const username = localStorage.getItem('username');
   const [clicked, setClicked] = useState(false)
 
@@ -15,6 +17,12 @@ const Navbar = () => {
     }else{
       setClicked(true)
     }
+  }
+
+  const logOutHandler = () => {
+    localStorage.removeItem('token');
+    navigate('/')
+    
   }
 
   useEffect(() => {
@@ -34,7 +42,7 @@ const Navbar = () => {
         <ChevronDown onClick={dropdownHandler}/>
       </div>
          <div className={`absolute flex  -z-30 right-8 w-[11.5rem] h-12 transition-all duration-500 p-2 tracking-tight ${clicked ? 'translate-y-12 flex bg-white border border-gray-200 shadow-md text-black' : 'bg-white'}`}>
-          <div className="flex gap-3 items-center  text-base w-full font-semibold py-1 px-2 hover:text-pink-400 hover:bg-pink-50">
+          <div onClick={logOutHandler} className="flex gap-3 items-center  text-base w-full font-semibold py-1 px-2 hover:text-pink-400 hover:bg-pink-50">
           <LogOut size={18}/>
           <a className=''>LogOut</a>
           </div>
