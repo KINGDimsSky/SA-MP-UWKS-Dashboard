@@ -45,7 +45,7 @@ const DashLayout = () => {
         </div>
     </div>
     <div className="DashboardContent bg-gray-200 pt-20 pb-6 md:px-6 px-3 w-full">
-        <div className="py-8 px-2 bg-white rounded-md h-full">
+        <div className="py-8 px-4 bg-white rounded-md h-full">
             {activeIndex === 0 ? <HomeDash/> : null}
             {activeIndex === 1 ? <PlayerInfo/> : null}
         </div>

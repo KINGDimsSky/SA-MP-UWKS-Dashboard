@@ -1,9 +1,14 @@
 import React from 'react'
+import BoxData from './BoxData'
+import { Users, Activity, Gamepad } from 'lucide-react';
+
 
 const HomeDash = () => {
   return (
-    <div className="container">
-        <h2>Testing</h2>
+    <div className="flex gap-6">
+       <BoxData background="bg-yellow-200" icon={Users}/>
+       <BoxData background="bg-pink-200" icon={Activity}/>
+       <BoxData background="bg-green-200" icon={Gamepad}/>
     </div>
   )
 }
