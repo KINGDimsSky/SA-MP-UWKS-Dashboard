@@ -24,11 +24,7 @@ const Navbar = () => {
     navigate('/')
     
   }
-
-  useEffect(() => {
-    console.log (clicked)
-  }, [clicked])
-
+  
   return (
     <div className="fixed z-50 justify-between flex w-full  gap-2 items-center px-8 bg-white border-b border-gray-400 h-14">
       <div className="flex items-center gap-3"> 

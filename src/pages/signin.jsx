@@ -12,6 +12,13 @@ const LoginForm = () => {
   const [existed, setExisted] = useState(false);
   const [ifWrongPass, setifWrongPass] = useState(false);
 
+
+  useEffect(() => {
+    if (localStorage.getItem('token')){
+      localStorage.removeItem('token')
+    }
+  }, [])
+
   useEffect(() => {
     loginRef.current.focus()
   })
