@@ -10,7 +10,7 @@ const HomeDash = () => {
          <BoxData background="bg-yellow-200" icon={Users} title="Player Info"/>
          <BoxData background="bg-pink-200" icon={Activity} title="Server Status"/>
          <BoxData background="bg-green-200" icon={Gamepad} title="Gamemode"/>
-         <div className="bg-blue-200 w-[26em] p-4">
+         <div className="bg-blue-900 w-[26em] p-4">
             <h2 className='text-white font-semibold text-xl'>Server Running Fluenlty</h2>
          </div>
        </div>

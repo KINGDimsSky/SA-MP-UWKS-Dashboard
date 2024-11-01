@@ -28,8 +28,8 @@ const Navbar = () => {
   return (
     <div className="fixed z-50 justify-between flex w-full  gap-2 items-center px-8 bg-white border-b border-gray-400 h-14">
       <div className="flex items-center gap-3"> 
-       <p className='bg-yellow-50 '>...</p>
-       <h2 className='font-semibold text-2xl'>UWKS Roleplay</h2>
+        <div className="hamburger"></div>
+       <h2 className='font-semibold  hidden md:flex md:text-2xl'>UWKS Roleplay</h2>
       </div>
       <div className="flex h-full bg-white items-center gap-2">
         <Bell className='cursor-pointer' onClick={handlerClicker}/>

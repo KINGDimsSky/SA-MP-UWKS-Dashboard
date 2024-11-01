@@ -2,8 +2,10 @@ import React from 'react'
 
 const PlayerInfo = () => {
   return (
-    <div className="playerinfo">
-        <h2>Player Info</h2>
+    <div className="flex flex-col">
+        <div className="flex flex-col bg-yellow-200">
+          <h2 className='font-semibold tracking-tight text-2xl'>Player Info</h2>
+        </div>
     </div>
   )
 }

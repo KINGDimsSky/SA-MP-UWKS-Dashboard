@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from '../Components/Button'
 
 
 const Landing = () => {
+
+  useEffect(() => {
+    if(localStorage.getItem('token')){
+      localStorage.removeItem('token')
+    }
+  }, [])
+
   return (
     <div className="min-h-screen flex justify-between items-center ">
         <div className="title md:ml-40 mb-20">
