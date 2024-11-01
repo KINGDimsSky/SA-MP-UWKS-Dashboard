@@ -11,7 +11,7 @@ const Landing = () => {
   }, [])
 
   return (
-    <div className="min-h-screen flex justify-between items-center ">
+    <div className="min-h-screen flex justify-between items-center">
         <div className="title md:ml-40 mb-20">
             <h2 className='font-bold text-xl md:text-4xl tracking-tight'>UWKS SA:MP Roleplay</h2>
             <h2 className='font-bold text-xl md:text-4xl tracking-tight mb-4'>GET YOUR EXPERIENCE WITH US!</h2>
