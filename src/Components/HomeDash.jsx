@@ -12,7 +12,7 @@ const HomeDash = () => {
          <BoxData background="bg-pink-200" icon={Activity} title="Server Status" data="Active"/>
          <BoxData background="bg-green-200" icon={Gamepad} title="Gamemode" data="Roleplay"/>
          <div className="bg-blue-900 w-[26em] flex flex-col items-center p-4">
-            <h2 className='text-white font-semibold text-xl mb-4'>Server Running Fluenlty</h2>
+            <h2 className='text-white font-semibold text-xl mb-4'>Server Running Fluently</h2>
             <Zap size={45} className='text-white'/>
          </div>
        </div>

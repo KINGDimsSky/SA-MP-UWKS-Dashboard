@@ -6,20 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import { getUsername } from '../services/Auth.service';
 import HomeDash from '../Components/HomeDash';
 import PlayerInfo from '../Components/PlayerInfo';
+import { useLogin } from '../hooks/useLogin';
 
 const DashLayout = () => {
     const navigate = useNavigate();
     const [activeIndex, setActiveIndex] = useState(0);
-    const [username, setUsername] = useState('');
+    useLogin();
 
-    useEffect(() => {
-      const tokenStatus = localStorage.getItem('token');
-      if (tokenStatus){
-        setUsername(tokenStatus)      
-      }else {
-        navigate('/signin')    
-      }
-    }, [activeIndex])
+
 
     const iconMap = {
         House: House, 
