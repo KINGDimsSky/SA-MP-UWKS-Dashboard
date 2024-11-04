@@ -12,6 +12,10 @@ const Navbar = () => {
     alert("Clicked")
   }
 
+  const profileOnClick = () => {
+    navigate('/profile')
+  }
+
   const dropdownHandler = () => {
     if (clicked){
       setClicked(false)
@@ -35,7 +39,7 @@ const Navbar = () => {
       <div className="flex pl-4 h-full bg-white justify-between gap-2 items-center">
         <Bell className='cursor-pointer' onClick={handlerClicker}/>
         <p className='ml-4 tracking-tight font-semibold'>{username}</p>
-        <div className="w-8 h-8 rounded-full  bg-red-500"></div>
+        <div onClick={profileOnClick} className="w-8 h-8 rounded-full  bg-red-500"></div>
         <ChevronDown onClick={dropdownHandler}/>
       </div>
          <div className={`absolute -z-30 right-8 w-[11.5rem] h-12 transition-all duration-500 p-2 tracking-tight ${clicked ? 'translate-y-12 flex bg-white border border-gray-200 shadow-md text-black' : 'bg-white'}`}>

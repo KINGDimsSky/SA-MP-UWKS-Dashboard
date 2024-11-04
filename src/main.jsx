@@ -7,6 +7,7 @@ import LoginForm from './pages/signin'
 import SignUpForm from './pages/signup'
 import NotFound from './pages/404'
 import Dashboard from './pages/Dashboard'
+import PageProfile from './pages/profile'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path : "/dashboard",
     element: <Dashboard/>
+  },
+  {
+    path : "/profile",
+    element: <PageProfile/>
   },
 ])
 
