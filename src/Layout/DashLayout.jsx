@@ -2,14 +2,11 @@ import React, { useEffect } from 'react'
 import { Flag, House, Settings, User } from 'lucide-react'
 import { sidebarItem } from '../config'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { getUsername } from '../services/Auth.service';
 import HomeDash from '../Components/HomeDash';
 import PlayerInfo from '../Components/PlayerInfo';
 import { useLogin } from '../hooks/useLogin';
 
 const DashLayout = () => {
-    const navigate = useNavigate();
     const [activeIndex, setActiveIndex] = useState(0);
     useLogin();
 

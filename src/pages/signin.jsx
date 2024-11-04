@@ -4,7 +4,7 @@ import InputForm from '../Components/InputForm'
 import AuthLayout from '../Layout/AuthLayout'
 import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
-import { generateToken, loginSessions } from '../services/Auth.service'
+import { generateToken } from '../services/Auth.service'
 import { usetokenRemoval } from '../hooks/useLogin'
 
 const LoginForm = () => {

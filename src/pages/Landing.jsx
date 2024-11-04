@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Button from '../Components/Button'
+import { usetokenRemoval } from '../hooks/useLogin'
 
 
 const Landing = () => {
-
-  useEffect(() => {
-    if(localStorage.getItem('token')){
-      localStorage.removeItem('token')
-    }
-  }, [])
+  usetokenRemoval();
 
   return (
     <div className="min-h-screen flex justify-between items-center">

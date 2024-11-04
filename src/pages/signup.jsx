@@ -3,17 +3,13 @@ import InputForm from '../Components/InputForm';
 import Button from '../Components/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthLayout from '../Layout/AuthLayout';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { usetokenRemoval } from '../hooks/useLogin';
 
 const SignUpForm = () => {
   const navigate = useNavigate();
   const [wrongPass, setWrongPass] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.getItem('token')){
-      localStorage.removeItem('token');
-    }
-  }, [])
+  usetokenRemoval();
 
   const signHandler =  (event) => {
     const username = event.target.username.value;
