@@ -15,3 +15,11 @@ export const useLogin = () => {
 
       return username
 }   
+
+export const usetokenRemoval = () => {
+    useEffect(() => {
+        if (localStorage.getItem('token')){
+          localStorage.removeItem('token')
+        }
+      }, [])
+}

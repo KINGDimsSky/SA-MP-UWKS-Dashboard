@@ -13,8 +13,6 @@ const DashLayout = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     useLogin();
 
-
-
     const iconMap = {
         House: House, 
         User: User,
@@ -22,7 +20,6 @@ const DashLayout = () => {
         Flag: Flag
       }
 
-      
   return (
     <div className="flex">
     <div className="md:flex border-r hidden border-gray-300 items-center justify-between flex-col w-72 h-screen">

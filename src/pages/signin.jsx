@@ -5,19 +5,14 @@ import AuthLayout from '../Layout/AuthLayout'
 import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import { generateToken, loginSessions } from '../services/Auth.service'
+import { usetokenRemoval } from '../hooks/useLogin'
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const loginRef = useRef(null);
   const [existed, setExisted] = useState(false);
   const [ifWrongPass, setifWrongPass] = useState(false);
-
-
-  useEffect(() => {
-    if (localStorage.getItem('token')){
-      localStorage.removeItem('token')
-    }
-  }, [])
+  usetokenRemoval()
 
   useEffect(() => {
     loginRef.current.focus()
