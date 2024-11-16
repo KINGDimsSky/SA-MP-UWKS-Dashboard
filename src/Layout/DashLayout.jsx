@@ -19,7 +19,7 @@ const DashLayout = () => {
 
   return (
     <div className="flex">
-    <div className="md:flex border-r hidden border-gray-300 items-center justify-between flex-col w-72 h-screen">
+    <div className="md:flex border-r hidden border-gray-300 items-center justify-between flex-col w-72 min-h-screen">
           <ul className='mt-28 flex flex-col w-full gap-y-4'>
             {sidebarItem.map((e, index) => {
             const MyIcons = iconMap[e.icon]
