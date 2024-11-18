@@ -18,7 +18,7 @@ const LoginForm = () => {
     loginRef.current.focus()
   })
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event) => { 
     event.preventDefault();
     const data = {
       username: event.target.username.value,
