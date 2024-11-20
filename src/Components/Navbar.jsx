@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="hamburger"></div>
        <h2 className='font-semibold  hidden md:flex md:text-2xl'>UWKS Roleplay</h2>
       </div>
-      <div className="flex pl-4 h-full bg-white justify-between gap-2 items-center">
+      <div className="flex pl-4 min-w-48 h-full bg-white justify-between gap-2 items-center">
         <Bell className='cursor-pointer' onClick={handlerClicker}/>
         <p className='ml-4 tracking-tight font-semibold'>{username}</p>
         <div onClick={profileOnClick} className="w-8 h-8 rounded-full  bg-red-500"></div>
